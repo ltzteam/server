@@ -58,4 +58,8 @@ type Driver interface {
 	// params  - destination path, an io.Reader containing the file data
 	// returns - the number of bytes writen and the first error encountered while writing, if any.
 	PutFile(string, io.Reader, bool) (int64, error)
+
+	// params  - null
+	// returns - send full images: NOOP | NOOP FULL
+	Noop() (string)
 }

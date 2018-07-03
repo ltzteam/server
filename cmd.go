@@ -521,7 +521,8 @@ func (cmd commandNoop) RequireAuth() bool {
 }
 
 func (cmd commandNoop) Execute(conn *Conn, param string) {
-	conn.writeMessage(200, "OK")
+	// conn.writeMessage(200, "OK")
+	conn.writeMessage(200, conn.driver.Noop())
 }
 
 // commandPass respond to the PASS FTP command by asking the driver if the
